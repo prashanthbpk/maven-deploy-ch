@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="yuhuFlow" doc:id="fe62781e-ed56-4216-8354-d233997860be" >
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="60c00280-80c2-47b7-a656-eece458c249e" />
+	</flow>
+</mule>
