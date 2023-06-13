@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
@@ -14,8 +16,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0-20230320</app.runtime>
-		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.8.4</mule.maven.plugin.version>
 	</properties>
+
 
 	<build>
 		<plugins>
@@ -29,6 +32,18 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<muleVersion>4.4.0</muleVersion>
+						<username>nature123</username>
+						<password>Nature123@</password>
+						<applicationName>yuhu</applicationName>
+						<environment>baby</environment>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+					</cloudHubDeployment>
+
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -45,6 +60,12 @@
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.3</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mule.tools.maven/mule-maven-plugin -->
+		<dependency>
+			<groupId>org.mule.tools.maven</groupId>
+			<artifactId>mule-maven-plugin</artifactId>
+			<version>3.8.4</version>
 		</dependency>
 	</dependencies>
 
@@ -74,5 +95,14 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	<!-- distributionManagement>
+		<repository>
+			<downloadUrl>http://mojo.codehaus.org/my-project</downloadUrl>
+		</repository>
+	</distributionManagement -->
+	
+	
+	
+
 
 </project>

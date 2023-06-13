@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b36ed251-053e-4a35-9b87-60d3cc455714" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
 	<flow name="yuhuFlow" doc:id="fe62781e-ed56-4216-8354-d233997860be" >
-		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="60c00280-80c2-47b7-a656-eece458c249e" />
+		<http:listener doc:name="Listener" doc:id="329cab32-e68a-4f6a-90d4-552145c56389" config-ref="HTTP_Listener_config" path="/yuhu"/>
+		<set-payload value='#["Success.."]' doc:name="Set Payload" doc:id="60c00280-80c2-47b7-a656-eece458c249e" />
 	</flow>
 </mule>
