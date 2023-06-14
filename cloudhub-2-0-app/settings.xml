@@ -1,0 +1,16 @@
+<settings>
+ <servers>
+   <server>
+    <id>anypoint-exchange-v3</id>
+	<username>nature123</username>
+	<password>Nature123@</password>
+  </server>
+  <server>
+    <id>anypoint-connected-app</id>
+	<username>~~~Client~~~</username>
+	<password>a31324ebec334aa8b82dac56af60ad8a~?~161776A2a92340D3Ab50C35656c6dce6</password>  
+  </server>
+</servers>  
+
+ 
+</settings>
