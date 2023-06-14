@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f19052fb-40d1-475b-9a56-48f8384fe352" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="b6bad42b-a3f5-411d-ad9b-3f5eb1db374e" file="dd.properties" />
+	<flow name="cloudhub-2-0-appFlow" doc:id="ed9ffc5d-d42d-437a-8b6a-5ed9dd6fcab2" >
+		<http:listener doc:name="Listener" doc:id="6fd3c0bc-2f3d-4697-9db0-84da07a08574" config-ref="HTTP_Listener_config" path="/baby"/>
+		<set-payload value='#["deployed to cloudhub 2.0 "]' doc:name="Set Payload" doc:id="9a7b62a6-d7cf-4b80-b1c8-7811f166e7be" />
+	</flow>
+</mule>
